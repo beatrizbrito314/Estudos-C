@@ -1,0 +1,11 @@
+#include <stdio.h> //inclui a biblioteca de entrada e saida
+
+//Função principal do programa, todo o código deve estar dentro dela
+int main ()
+{
+int a, b, c; //declaração de variaveis
+scanf("%d %d", &a, &b); //a função scanf recebe dados, o primeiro argumento especifica o formato da variavel
+
+printf("%os numeros informados são: %d %d %f: \n", a, b);
+return 0
+}
