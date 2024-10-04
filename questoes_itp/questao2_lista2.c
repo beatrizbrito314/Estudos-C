@@ -2,7 +2,6 @@
 
 int main() {
     int num;
-    printf("Digite um numero: ");
     scanf("%d", &num);
 
     int resto, inverso = 0;
@@ -17,13 +16,13 @@ int main() {
 
     //Condicionais para verificar os casos em que o numerro é ou não palindromo e é ou não par
     if (num == inverso && num % 2 == 0) {
-        printf("%d e um numero palindromo e par.\n", num);
+        printf("%d é Palíndromo e par.\n", num);
     } else if (num == inverso && num % 2 != 0){
-        printf("%d e um numero palindromo e impar.\n", num);
+        printf("%d é Palíndromo e impar.\n", num);
     }else if (num != inverso && num % 2 == 0){
-        printf("%d nao e um numero palindromo, mas e par.\n", num);
+        printf("%d não é Palindromo e par.\n", num);
     }else {
-        printf("%d nao e um número palindrom, mas e impar \n", num);
+        printf("%d não é Palindrom e impar \n", num);
     }
 
 
