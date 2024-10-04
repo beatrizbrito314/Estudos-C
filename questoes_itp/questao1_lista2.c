@@ -11,7 +11,7 @@ int main() {
   // Desenha o X
   for (i = 1; i < linhas; i++) {
     for (j = 0; j < linhas; j++) {
-      if (i == j || i + j == linhas - 1) {
+      if (i == j || i + j == linhas) {
         printf("%c", caractere);
       } else {
         printf(" ");
