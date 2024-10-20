@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int definirLevel(float velocidade){
+int nivel(float velocidade){
     if (velocidade < 10) {
     return 1;
     }else if(velocidade >=  10 && velocidade < 20){
@@ -11,16 +11,19 @@ int definirLevel(float velocidade){
 }
 
 int main() {
-  int qtdLesmas, velocidade, maior_level = 0;
+  int qtdLesmas, velocidade, maxNivel;
+  maxNivel=0;
+  i=1;
 
   scanf("%d", &qtdLesmas);
 
-  for (int i = 0; i < qtdLesmas; i++) {
+  while (i<=qtdLesmas) {
     scanf("%d", &velocidade);
-    int level = definirLevel(velocidade);
-    if (level > maior_level) {
-      maior_level = level;
+    int nivelLesma = nivel(velocidade);
+    if (level > maxNivel) {
+      maxNivel = nivelLesma;
     }
+    i+=1;
   }
 
   printf("Level %d\n", maior_level);

@@ -1,31 +1,24 @@
 #include <stdio.h>
-
-//função das medias
-float calculaMedia(char tipo, float num1, float num2, float num3) {
-    float result;
-    switch (tipo) {
-        case 'A':
-            result = (num1 + num2 + num3) / 3;
-            printf("Média %.2f\n", result);
-            break;
-        case 'P':
-            result = ((num1*4) + (num2*5) + (num3*6)) / 15;
-            printf("Média %.2f\n", result);
-            break;
+float media(char tipo, float num1, float num2, float num3) {
+ float res;
+    
+    if (tipo == 'A') {
+        res = (num1 + num2 + num3) / 3;
+        printf("Média %.2f\n", res);
+    } else if (tipo == 'P') {
+        res = ((num1*4) + (num2*5) + (num3*6)) / 15;
+        printf("Média %.2f\n", res);
     }
-    return result;
-}
+    
+    return res;}
 
 int main() {
     char tipo;
-    float num1, num2, num3;
+    float nota1, nota2, nota3;
 
-//leitura dos dados
     scanf(" %c", &tipo);
-    scanf("%f %f %f", &num1, &num2, &num3);
-
-//chamada da função
-    calculaMedia(tipo, num1, num2, num3);
+    scanf("%f %f %f", &nota1, &nota2, &nota3);
+    media(tipo, nota1, nota2, nota3);
 
     return 0;
 }
