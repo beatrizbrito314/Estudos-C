@@ -1,48 +1,38 @@
 #include <stdio.h>
 
 int main() {
-    int n, i, j, troca, temp;
-
+    int n, i, j, temp;
+    
     scanf("%d", &n);
-
-    int arr[n];
-    int original[n]; 
-
+    
+    int a[n];
     
     for (i = 0; i < n; i++) {
-        scanf("%d", &arr[i]);
-        original[i] = arr[i]; 
+        scanf("%d", &a[i]);
     }
+    
 
     for (i = 0; i < n; i++) {
-        printf("%d", original[i]);
-        if (i < n - 1) {
-            printf(" ");
-        }
+        printf("%d ", a[i]);
     }
     printf("\n");
-
-    troca = 1;
-    while (troca) {
-        troca = 0;
-        for (i = 0; i < n - 1; i++) {
-            if (arr[i] > arr[i + 1]) {
-                temp = arr[i];
-                arr[i] = arr[i + 1];
-                arr[i + 1] = temp;
-                troca = 1;
+    
+ 
+    for (i = 0; i < n-1; i++) {
+        for (j = 0; j < n-i-1; j++) {
+            if (a[j] > a[j+1]) {
+              
+                temp = a[j];
+                a[j] = a[j+1];
+                a[j+1] = temp;
             }
         }
-
-        if (troca) {
-            for (j = 0; j < n; j++) {
-                printf("%d", arr[j]);
-                if (j < n - 1) {
-                    printf(" ");
-                }
-            }
-            printf("\n");
+        
+        for (j = 0; j < n; j++) {
+            printf("%d ", a[j]);
         }
+        printf("\n");
     }
+    
     return 0;
 }

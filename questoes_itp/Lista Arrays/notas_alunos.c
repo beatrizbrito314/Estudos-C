@@ -1,52 +1,53 @@
 #include <stdio.h>
- //Esse demõnio dessa questão que passei três dias fazendo tbm quem manda a pessoa ser burra
+ 
 int main() {
     int n, i, chamada;
     float media;
 
     scanf("%d", &n);
 
-    int aprovados[n], recuperacao[n], reprovados[n];
-    float mediaApr[n], mediaRec[n], mediaRepr[n];
-    int contagemApr = 0, contagemRec = 0, contagemRepr = 0;
+    int aprov[n], rec[n], repro[n];
+    float aprovMedia[n], recMedia[n], reproMedia[n];
+    int aprovCount,recCount, reproCount;
+    aprovCount=recCount=reproCount=0;
 
     for (i = 0; i < n; i++) {
         scanf("%d - %f", &chamada, &media);
 
         if (media >= 7.0) {
-            aprovados[contagemApr] = chamada;
-            mediaApr[contagemApr] = media;
-            contagemApr++;
+            aprov[aprovCount] = chamada;
+            aprovMedia[aprovCount] = media;
+            aprovCount++;
         } else if (media >= 5.0) {
-            recuperacao[contagemRec] = chamada;
-            mediaRec[contagemRec] = media;
-            contagemRec++;
+            rec[recCount] = chamada;
+            recMedia[recCount] = media;
+            recCount++;
         } else {
-            reprovados[contagemRepr] = chamada;
-            mediaRepr[contagemRepr] = media;
-            contagemRepr++;
+            repro[reproCount] = chamada;
+            reproMedia[reproCount] = media;
+            reproCount++;
         }
     }
 
     printf("Aprovados: ");
-    for (i = 0; i < contagemApr; i++) {
+    for (i = 0; i < aprovCount; i++) {
         if (i > 0) printf(", ");
-        printf("%d (%.1f)", aprovados[i], mediaApr[i]);
+        printf("%d (%.1f)", aprov[i], aprovMedia[i]);
     }
 
-    if (contagemRec > 0) {
+    if (recCount > 0) {
         printf("\nRecuperação: ");
-        for (i = 0; i < contagemRec; i++) {
+        for (i = 0; i < recCount; i++) {
             if (i > 0) printf(", ");
-            printf("%d (%.1f)", recuperacao[i], mediaRec[i]);
+            printf("%d (%.1f)", rec[i], recMedia[i]);
         }
     }
 
-    if (contagemRepr > 0) {
+    if (reproCount > 0) {
         printf("\nReprovados: ");
-        for (i = 0; i < contagemRepr; i++) {
+        for (i = 0; i < reproCount; i++) {
             if (i > 0) printf(", ");
-            printf("%d (%.1f)", reprovados[i], mediaRepr[i]);
+            printf("%d (%.1f)", repro[i], reproMedia[i]);
         }
     }
     return 0;
